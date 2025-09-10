@@ -1,0 +1,37 @@
+import numpy as np
+
+class LessonNumpy(object):
+    def __init__(self):
+        self.arry0=np.array([1,2,3,4,5,6,7,8,9])
+        print(self.arry0)
+        print("------------------------")
+        self.arry1=np.random.randint(0,10,10)
+        print(self.arry1)
+        print("------------------------")
+        self.arry2=np.zeros(10)
+        print(self.arry2)
+        print("------------------------")
+        self.arry3=np.ones(5)
+        print(self.arry3)
+        print("------------------------")
+        self.arry4=np.arange(1,20,2)
+        print(self.arry4)
+        print("------------------------")
+        self.arry5=np.array([10,20,30,40,50]).mean()
+        print(self.arry5)
+        print("------------------------")
+        self.arry6=np.array([5,15,25,35,45]).std()
+        print(self.arry6)
+        print("------------------------")
+        self.arry7=np.array([2,4,6,8])
+        self.arry8=np.array([1,3,5,7])
+        print(self.arry7+self.arry8)
+        print("------------------------")
+        self.arry9=np.zeros((3,3))
+        print(self.arry9)
+        print("------------------------")
+        self.arry10=np.ones((3,3))
+        print(self.arry10)
+
+
+l=LessonNumpy()
