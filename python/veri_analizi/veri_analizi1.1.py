@@ -1,14 +1,14 @@
 import matplotlib.pyplot as plt
 import numpy as np
-from veri_analizi1 import Veri_Analizi1
+from veri_analizi1 import Veri_Analizi1# import page veri analizi and in class
 
 class VeriAnalzi1_1:
     def __init__(self):
         self.NumpyExsample()
 
     def NumpyExsample(self):
-        analiz = Veri_Analizi1()      
-        print(analiz.df.head())     
+        analiz = Veri_Analizi1()      # veri analizi clasını alır
+        print(analiz.df.head())     # class da bulunuan verinin data kısmını yazar
      
         for col in ["yagis", "nem", "sicaklik"]:
               his, bin_edges = np.histogram(analiz.df[col], bins=10)
@@ -18,10 +18,10 @@ class VeriAnalzi1_1:
         x1=analiz.holiday_day_heat_mean
 
 
-        plt.plot(x , color="b"  ,label="sıcaklık")
-        plt.plot(x1, color="red",marker="o",label="tatiller ortalama sıcaklığı")
+        plt.plot(x , color="b"  ,label="sıcaklık")# çizgi grafiği oluşturur
+        plt.plot(x1, color="red",marker="o",label="tatiller ortalama sıcaklığı")#rengi ve cizgi şekli verildi burdaki label sayesinde legend da görülür
         plt.legend()
-        plt.savefig("foto1.png")
+        plt.savefig("foto1.png")# grafiğin ss ini alır ve isimini verir
         plt.show()
 
         y=analiz.df["nem"]
@@ -42,7 +42,7 @@ class VeriAnalzi1_1:
         plt.savefig("foto3.png")
         plt.show()
 
-        plt.hist(x, bins=15, color='skyblue', edgecolor='black')  # bins: kaç aralık
+        plt.hist(x, bins=15, color='skyblue', edgecolor='black')  # bins: kaç aralık olacsğını açıklar edgecolor ile cubuk grafiğinin kenarlarını oluşturur
         plt.xlabel("Sıcaklık (°C)")
         plt.ylabel("Frekans")
         plt.title("Sıcaklık Dağılımı")
@@ -56,7 +56,7 @@ class VeriAnalzi1_1:
         plt.savefig("foto5.png")
         plt.show()
 
-        plt.hist([x, y, z], bins=20, label=["Sıcaklık", "Nem", "Yağış"], edgecolor='black')
+        plt.hist([x, y, z], bins=20, label=["Sıcaklık", "Nem", "Yağış"], edgecolor='black')# 3tane değer alarark çubuk grafiği oluşturur
         plt.xlabel("Değer")
         plt.ylabel("Frekans")
         plt.title("Sıcaklık, Nem ve Yağış Dağılımı")
@@ -80,8 +80,8 @@ class VeriAnalzi1_1:
         plt.show()
 
         plt.bar(a1,a3 , edgecolor="black")
-        plt.axhline(y=61, color="red", linewidth=3, linestyle="--", label='ortalam')
-        plt.xticks(rotation=90) 
+        plt.axhline(y=61, color="red", linewidth=3, linestyle="--", label='ortalam')#yatay bir çizgi atarak ortalama değeri gösterir
+        plt.xticks(rotation=90) # grafiğin isimlerinin konumunu değiştirir döndürür
         plt.title("tatil günlerinin ortlama nem tablosu")
         plt.legend()
         plt.savefig("foto8.png")
@@ -100,7 +100,7 @@ class VeriAnalzi1_1:
         plt.savefig("foto10.png")
         plt.show()
 
-        fig, (ax1, ax2, ax3) = plt.subplots(3, 1, figsize=(12, 8))
+        fig, (ax1, ax2, ax3) = plt.subplots(3, 1, figsize=(12, 8))#3 değerin de trend eğilimini tek grafikte gösterir
         x.plot(ax=ax1, title='Sıcaklık Trendi')
         y.plot(ax=ax2, title='Nem Trendi')
         z.plot(ax=ax3, title='Yağış Trendi')
